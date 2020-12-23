@@ -83,7 +83,7 @@ def start_rs():
 
 
 def create_window():
-    cv.namedWindow("param")
+    cv.namedWindow("param") 
     cv.resizeWindow("param", 400, 800)
     cv.createTrackbar('Rl', "param", 0, 255, nothing)
     cv.createTrackbar('Rh', 'param', 38, 255, nothing)
@@ -104,7 +104,7 @@ def create_window():
 
 def detect_arrow(color_frame):
     frame = cv.cvtColor(color_frame, cv.COLOR_BGR2HSV)
-    mask = cv.inRange(frame,
+    mask = cv.inRange(frame,    
                         lowerb=np.array([cv.getTrackbarPos('Bl', 'param'), cv.getTrackbarPos(
                             'Gl', 'param'), cv.getTrackbarPos('Rl', 'param')]),
                         upperb=np.array([cv.getTrackbarPos('Bh', 'param'), cv.getTrackbarPos('Gh', 'param'), cv.getTrackbarPos('Rh', 'param')]))
